@@ -7,17 +7,21 @@ void troca(int *a, int *b){
     *b = aux;
 }
 
-void selectionSort(int *V, int N){
+//O método consiste em colocar cada elemento na sua posição de maneira crescente.
+//Ou seja, na primeira iteraçãa, o algoritmo irá encontrar o menor elemento e coloca-lo na primeira posição.
+//Em seguida, ele irá achar o menor elemento do vetor restante, a parte do vetor que ainda não está ordenado.
+//Complexidade: O(n^2) sendo melhor que o bubble sort na prática.
+void selectionSort(int *v, int n){
     int menor;
-    for(int i = 0; i < N - 1; i++){
+    for(int i = 0; i < n - 1; i++){
         menor = i;
-        for(int j = i + 1; j < N; j++){
-            if(V[j] < V[menor]){
+        for(int j = i + 1; j < n; j++){
+            if(v[j] < v[menor]){
                 menor = j;
             }
         }
         if(i != menor){
-            troca(&V[i], &V[menor]);
+            troca(&v[i], &v[menor]);
         }
     }
 }

@@ -1,19 +1,22 @@
 #include <stdio.h>
 
-void insertionSort(int *V, int N){
+//O método consiste em ordenar o vetor igual ordenamos uma mão de baralho.
+//Inserindo cada elemento em sua posição e "deslizando" as cartas odenadas em sua frente para as posições seguintes.
+//complexidade: O(n^2) sendo melhor que o selection sort na prática.
+void insertionSort(int *v, int n){
     int j, atual;
-    for(int i = 1; i < N; i++){
-        atual = V[i];
-        for(j = i; (j > 0) && (atual < V[j - 1]); j--){
-            V[j] = V[j - 1];
+    for(int i = 1; i < n; i++){
+        atual = v[i];
+        for(j = i; (j > 0) && (atual < v[j - 1]); j--){
+            v[j] = v[j - 1];
         }
-        V[j] = atual;
+        v[j] = atual;
     }
 }
 
 int main()
 {
-    int vetor[5] = {9, 4, 3, 7, 10};
+    int vetor[5] = {5, 4, 3, 2, 1};
     
     insertionSort(vetor, 5);
     

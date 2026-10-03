@@ -7,17 +7,19 @@ void troca(int *a, int *b){
     *b = aux;
 }
 
-void bubbleSort(int *V, int N){
+//O método consiste em a cada iteração do while, mover o maior elemento para a última posição do vetor
+//Complexidade: O(n^2)
+void bubbleSort(int *v, int n){
     int continuar;
     do{
         continuar = 0;
-        for(int i = 0; i < N - 1; i++){
-            if(V[i] > V[i + 1]){
-                troca(&V[i], &V[i + 1]);
+        for(int i = 0; i < n - 1; i++){
+            if(v[i] > v[i + 1]){   
+                troca(&v[i], &v[i + 1]);
                 continuar = i;
             }
         }
-        N--;
+        n--;
     }while(continuar != 0);
 }
 
